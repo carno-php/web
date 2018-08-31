@@ -1,0 +1,27 @@
+{
+  "name": "carno-php/web",
+  "license": "MIT",
+  "require": {
+    "nikic/fast-route": "~1.3",
+    "carno-php/container": "^1.0",
+    "carno-php/coroutine": "^1.0",
+    "carno-php/promise": "^1.0",
+    "carno-php/serving": "^1.0",
+    "carno-php/chain": "^1.0",
+    "carno-php/http": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Carno\\Web\\": "src"
+    }
+  },
+  "bin": [
+    "bin/httpd"
+  ],
+  "minimum-stability": "dev",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
