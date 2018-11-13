@@ -14,5 +14,6 @@ if (is_file($bootstrap = CWD . '/vendor/autoload.php')) {
     ->bootstrap(...\Carno\Serving\Shared::COMPONENTS)
     ->bootstrap(...\Carno\Web\Resources::COMPONENTS)
     ->commands(...\Carno\Web\Resources::APPS)
+    ->components()
     ->start()
 ;
