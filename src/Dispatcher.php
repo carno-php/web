@@ -17,6 +17,7 @@ use Carno\Web\Exception\InternalServerException;
 use Carno\Web\Exception\MethodNotAllowedException;
 use Carno\Web\Exception\RouterNotFoundException;
 use FastRoute\Dispatcher as FRDispatcher;
+use Throwable;
 
 class Dispatcher
 {
@@ -38,6 +39,7 @@ class Dispatcher
     /**
      * @param ServerRequest $sr
      * @return Response
+     * @throws Throwable
      */
     public function invoke(ServerRequest $sr)
     {

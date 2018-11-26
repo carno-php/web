@@ -14,6 +14,7 @@ use Carno\Web\Contracts\Controller\Extensional;
 use Carno\Web\Controller\Based;
 use Carno\Web\Exception\InvalidControllerException;
 use Closure;
+use Generator;
 use Throwable;
 
 trait Executor
@@ -23,7 +24,7 @@ trait Executor
      * @param ServerRequest $sr
      * @param callable $handler
      * @param array $params
-     * @return array [response.http, result.raw]
+     * @return Generator|array [response.http, result.raw]
      * @throws Throwable
      */
     protected function calling(Context $ctx, ServerRequest $sr, callable $handler, array $params)

@@ -17,7 +17,9 @@ trait BodyParser
      */
     protected function parsedBody(ServerRequestInterface $srq) : void
     {
-        if ($srq->getMethod() === 'GET') {
+        $srm = $srq->getMethod();
+
+        if ($srm === 'GET' || $srm === 'HEAD' || $srm === 'OPTIONS') {
             return;
         }
 

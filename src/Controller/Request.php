@@ -45,15 +45,6 @@ class Request
     }
 
     /**
-     * @deprecated
-     * @return ServerRequest
-     */
-    public function ingress() : ServerRequest
-    {
-        return $this->server;
-    }
-
-    /**
      * @return string
      */
     public function action() : string

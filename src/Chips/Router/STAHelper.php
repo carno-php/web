@@ -13,18 +13,6 @@ use Carno\Web\Contracts\Router\Methods;
 trait STAHelper
 {
     /**
-     * @deprecated
-     * @param array $methods
-     * @param string $uri
-     * @param callable $processor
-     * @return static
-     */
-    public function maps(array $methods, string $uri, callable $processor) : self
-    {
-        return $this->match($methods, $uri, $processor);
-    }
-
-    /**
      * @param array $methods
      * @param string $uri
      * @param callable $processor

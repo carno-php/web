@@ -12,6 +12,7 @@ use Carno\Coroutine\Context;
 use Carno\HTTP\Standard\Response;
 use Carno\HTTP\Standard\ServerRequest;
 use Carno\HTTP\Standard\Streams\Body;
+use Carno\Web\Controller\Remote;
 use Carno\Web\Controller\Request;
 use Carno\Web\Controller\Stats;
 
@@ -20,12 +21,12 @@ trait Runtime
     use Commands;
 
     /**
-     * @var Context
+     * @var Context|null
      */
     private $context = null;
 
     /**
-     * @var ServerRequest
+     * @var ServerRequest|null
      */
     private $server = null;
 
@@ -40,12 +41,17 @@ trait Runtime
     private $params = [];
 
     /**
-     * @var Request
+     * @var Remote|null
+     */
+    private $remote = null;
+
+    /**
+     * @var Request|null
      */
     private $request = null;
 
     /**
-     * @var Response
+     * @var Response|null
      */
     private $response = null;
 
@@ -82,6 +88,14 @@ trait Runtime
     final public function ingress() : ServerRequest
     {
         return $this->server;
+    }
+
+    /**
+     * @return Remote
+     */
+    final public function remote() : Remote
+    {
+        return $this->remote ?? $this->remote = new Remote($this->context, $this->server);
     }
 
     /**

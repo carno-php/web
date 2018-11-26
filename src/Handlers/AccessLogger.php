@@ -65,8 +65,8 @@ class AccessLogger implements Layered
     private function requestFIN(Context $ctx, Throwable $error = null) : void
     {
         /**
-         * @var ServerRequest $request
-         * @var Response $response
+         * @var ServerRequest|null $request
+         * @var Response|null $response
          * @var Address $remote
          * @var float $start
          */
