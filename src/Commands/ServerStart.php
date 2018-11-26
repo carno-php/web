@@ -20,6 +20,7 @@ use Carno\Serving\Plugins\ServerMonitor;
 use Carno\Web\Components\Serving;
 use Carno\Web\Components\Monitor;
 use Carno\Web\Components\Routing;
+use Carno\Web\Components\Tracing;
 use Carno\Web\Server;
 
 class ServerStart extends Based
@@ -44,6 +45,7 @@ class ServerStart extends Based
         Routing::class,
         Serving::class,
         Monitor::class,
+        Tracing::class,
     ];
 
     /**
