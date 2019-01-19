@@ -17,7 +17,7 @@ trait VGTypes
      */
     public function string(string $name, string $default = '') : string
     {
-        return (string) $this->$name ?? $default;
+        return (string) ($this->$name ?? $default);
     }
 
     /**
@@ -27,7 +27,7 @@ trait VGTypes
      */
     public function integer(string $name, int $default = 0) : int
     {
-        return (int) $this->$name ?? $default;
+        return (int) ($this->$name ?? $default);
     }
 
     /**

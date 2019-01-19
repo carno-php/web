@@ -19,7 +19,7 @@ use Carno\Web\Exception\RouterNotFoundException;
 use Carno\Web\Policy\Inspector;
 use Carno\Web\Router\Initializer;
 use Carno\Web\Router\Records;
-use Carno\Web\Tests\Routes\R2;
+use Carno\Web\Tests\Resources\Routes\R2;
 use PHPUnit\Framework\TestCase;
 use Throwable;
 

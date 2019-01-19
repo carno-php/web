@@ -6,7 +6,7 @@
  * Time: 10:52
  */
 
-namespace Carno\Web\Tests\Controllers;
+namespace Carno\Web\Tests\Resources\Controllers;
 
 use Carno\Web\Controller\Based;
 

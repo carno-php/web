@@ -6,11 +6,11 @@
  * Time: 10:41
  */
 
-namespace Carno\Web\Tests\Routes;
+namespace Carno\Web\Tests\Resources\Routes;
 
 use Carno\Web\Router\Configure;
 use Carno\Web\Router\Setup;
-use Carno\Web\Tests\Controllers\Restful;
+use Carno\Web\Tests\Resources\Controllers\Restful;
 
 class R1 extends Configure
 {

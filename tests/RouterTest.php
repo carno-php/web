@@ -11,7 +11,7 @@ namespace Carno\Web\Tests;
 use Carno\Container\DI;
 use Carno\Web\Router\Initializer;
 use Carno\Web\Router\Records;
-use Carno\Web\Tests\Routes\R1;
+use Carno\Web\Tests\Resources\Routes\R1;
 use FastRoute\Dispatcher as FRD;
 use PHPUnit\Framework\TestCase;
 

@@ -6,7 +6,7 @@
  * Time: 10:36
  */
 
-namespace Carno\Web\Tests\Routes;
+namespace Carno\Web\Tests\Resources\Routes;
 
 use Carno\Web\Router\Configure;
 use Carno\Web\Router\Setup;
