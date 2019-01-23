@@ -12,6 +12,7 @@ use Carno\HTTP\Server as HTServer;
 use Carno\Net\Address;
 use Carno\Net\Contracts\Conn;
 use Carno\Net\Events as NETEvs;
+use Carno\Serving\Chips\Boots;
 use Carno\Serving\Chips\Events;
 use Carno\Serving\Chips\Plugins;
 use Carno\Serving\Chips\Wants;
@@ -19,7 +20,7 @@ use Carno\Web\Chips\Chains;
 
 class Server
 {
-    use Chains, Events, Wants, Plugins;
+    use Chains, Events, Boots, Wants, Plugins;
 
     /**
      * @var string

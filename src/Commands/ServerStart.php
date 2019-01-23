@@ -62,6 +62,7 @@ class ServerStart extends Based
             $app->name(),
             new Address($app->input()->getOption(Options::LISTEN))
         ))
+            ->bootstrap($this->bootstrap())
             ->plugins(
                 new LiveReloading,
                 new ServerMonitor,
