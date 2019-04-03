@@ -39,7 +39,6 @@ class IngressWrapper implements Layered
     public const RESPONDING = 'http-response';
 
     /**
-     * @inject
      * @var Dispatcher
      */
     private $dispatcher = null;
@@ -51,11 +50,13 @@ class IngressWrapper implements Layered
 
     /**
      * IngressWrapper constructor.
+     * @param Dispatcher $dispatcher
      * @param Options $options
      */
-    public function __construct(Options $options)
+    public function __construct(Dispatcher $dispatcher, Options $options = null)
     {
-        $this->options = $options;
+        $this->dispatcher = $dispatcher;
+        $this->options = $options ?? new Options;
     }
 
     /**

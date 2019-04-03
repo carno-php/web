@@ -13,6 +13,7 @@ use Carno\Console\Contracts\Application;
 use Carno\Console\Contracts\Bootable;
 use Carno\Container\DI;
 use Carno\Monitor\Daemon;
+use Carno\Web\Dispatcher;
 use Carno\Web\Handlers\AccessLogger;
 use Carno\Web\Handlers\ExceptionReview;
 use Carno\Web\Handlers\IngressReplier;
@@ -24,18 +25,21 @@ use Carno\Web\Server;
 class Serving extends Component implements Bootable
 {
     /**
+     * @var array
+     */
+    protected $dependencies = [Dispatcher::class];
+
+    /**
      * @param Application $app
      */
     public function starting(Application $app) : void
     {
-        $options = new Options;
-
         // controller invoker
         Server::layers()->append(
             null,
             DI::object(AccessLogger::class),
             DI::object(IngressReplier::class),
-            DI::object(IngressWrapper::class, $options)
+            DI::object(IngressWrapper::class, DI::get(Dispatcher::class), $options = new Options)
         );
 
         // exception dumps
