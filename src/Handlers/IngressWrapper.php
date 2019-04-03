@@ -20,6 +20,7 @@ use Carno\Promise\Promised;
 use Carno\Web\Chips\Server\BodyParser;
 use Carno\Web\Dispatcher;
 use Carno\Web\Exception\HTTPException;
+use Carno\Web\Options;
 use Throwable;
 
 class IngressWrapper implements Layered
@@ -38,17 +39,23 @@ class IngressWrapper implements Layered
     public const RESPONDING = 'http-response';
 
     /**
+     * @inject
      * @var Dispatcher
      */
     private $dispatcher = null;
 
     /**
-     * ControllerInvoker constructor.
-     * @param Dispatcher $dispatcher
+     * @var Options
      */
-    public function __construct(Dispatcher $dispatcher)
+    private $options = null;
+
+    /**
+     * IngressWrapper constructor.
+     * @param Options $options
+     */
+    public function __construct(Options $options)
     {
-        $this->dispatcher = $dispatcher;
+        $this->options = $options;
     }
 
     /**
@@ -65,7 +72,7 @@ class IngressWrapper implements Layered
 
         return race(async(function (ServerRequest $sr) {
             return $this->dispatcher->invoke($sr);
-        }, $ctx, $request), timeout(5000));
+        }, $ctx, $request), timeout($this->options->ttExec));
     }
 
     /**

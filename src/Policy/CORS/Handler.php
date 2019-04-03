@@ -1,21 +1,20 @@
 <?php
 /**
- * CORS policy handler
+ * CORS handler
  * User: moyo
  * Date: 2019-01-08
  * Time: 19:08
  */
 
-namespace Carno\Web\Policy;
+namespace Carno\Web\Policy\CORS;
 
 use Carno\Coroutine\Context;
 use Carno\HTTP\Standard\Response;
 use Carno\HTTP\Standard\ServerRequest;
 use Carno\Web\Contracts\Policy;
-use Carno\Web\Policy\Rules\CORS as Rule;
 use FastRoute\Dispatcher;
 
-class CORS implements Policy
+class Handler implements Policy
 {
     /**
      * @var string
@@ -23,16 +22,16 @@ class CORS implements Policy
     private $prefix = null;
 
     /**
-     * @var Rule
+     * @var Processor
      */
     private $rule = null;
 
     /**
      * CORS constructor.
      * @param string $prefix
-     * @param Rule $rule
+     * @param Processor $rule
      */
-    public function __construct(string $prefix, Rule $rule)
+    public function __construct(string $prefix, Processor $rule)
     {
         $this->prefix = $prefix;
         $this->rule = $rule;

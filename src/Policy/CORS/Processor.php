@@ -1,17 +1,17 @@
 <?php
 /**
- * Rule of CORS
+ * CORS processor
  * User: moyo
  * Date: 2019-01-08
  * Time: 15:22
  */
 
-namespace Carno\Web\Policy\Rules;
+namespace Carno\Web\Policy\CORS;
 
 use Carno\HTTP\Standard\Response;
 use Carno\HTTP\Standard\ServerRequest;
 
-class CORS
+class Processor
 {
     /**
      * @var string
